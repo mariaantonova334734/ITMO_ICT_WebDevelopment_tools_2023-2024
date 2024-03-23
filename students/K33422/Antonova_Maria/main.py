@@ -23,8 +23,4 @@ app.include_router(project_route)
 app.include_router(auth_route)
 
 if __name__ == "__main__":
-    # alembic_cfg = Config("C:/Users/Мария/Documents/6_web_lab1.4(2)/alembic.ini")
-    # #command.init(alembic_cfg, "migrations")
-    # command.revision(config=alembic_cfg, message="st",autogenerate=True)
-    # print("aa")
     uvicorn.run(app, host="127.0.0.1", port=8000)
