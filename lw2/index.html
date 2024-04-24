@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Лабораторная работа 2 - LAB_1</title>
+        <title>Лабораторная работа 2 - LABS</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -20,7 +20,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="..">LAB_1</a>
+                <a class="navbar-brand" href="..">LABS</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -30,11 +30,23 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem">
-                                <a href=".." class="nav-link">Лабораторная работа 1</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Lw1 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../lw1/" class="dropdown-item">Лабораторная работа 1</a>
+</li>
+                                </ul>
                             </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">Лабораторная работа 2</a>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Lw2 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Лабораторная работа 2</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -45,7 +57,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href=".." class="nav-link">
+                                <a rel="prev" href="../lw1/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -78,7 +90,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">Описание работы (разработка платформы для поиска людей в команду)</a>
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">Описание работы</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -124,7 +136,7 @@
 <h1 id="2">Лабораторная работа 2</h1>
 <h2 id="_1">Цель лабораторной работы</h2>
 <p>Понять отличия потоками и процессами и понять, что такое ассинхронность в Python.</p>
-<h2 id="_2">Описание работы (разработка платформы для поиска людей в команду)</h2>
+<h2 id="_2">Описание работы</h2>
 <p>Работа о потоках, процессах и асинхронности поможет студентам развить навыки создания эффективных и быстродействующих программ, что важно для работы с большими объемами данных и выполнения вычислений. 
 Этот опыт также подготавливает студентов к реальным проектам, где требуется использование многопоточности и асинхронности для эффективной обработки данных или взаимодействия с внешними сервисами.</p>
 <h2 id="1">Задание 1</h2>
@@ -225,7 +237,7 @@ if __name__ == "__main__":
     print(f"Execution time: {execution_time} seconds")
 </code></pre>
 <h2 id="_3">Полученные результаты по времени:</h2>
-<p><img alt="img_2.png" src="../img_2.png" /></p>
+<p><img alt="img_2.png" src="img_2.png" /></p>
 <h2 id="_4">Вывод</h2>
 <p>Программа, использующая асинхронность, завершается быстрее всего.  Программа, использующая мультипроцессы, завершается медленнее, чем программа с потоками.Это может быть связано с накладными расходами на создание и управление процессами.</p>
 <h2 id="2-">Задача 2. Параллельный парсинг веб-страниц с сохранением в базу данных</h2>
@@ -358,9 +370,9 @@ if __name__ == "__main__":
     print(f"Execution time: {execution_time} seconds")
 </code></pre>
 <h2 id="_5">Полученные записи</h2>
-<p><img alt="img.png" src="../img.png" /></p>
+<p><img alt="img.png" src="img.png" /></p>
 <h2 id="_6">Полученные результаты по времени:</h2>
-<p><img alt="img_1.png" src="../img_1.png" /></p>
+<p><img alt="img_1.png" src="img_1.png" /></p>
 <h2 id="_7">Вывод</h2>
 <p>Программа, использующая асинхронность, завершается быстрее всего.  Программа, использующая мультипроцессы, завершается медленнее, чем программа с потоками.Это может быть связано с накладными расходами на создание и управление процессами.</p>
 <p>Асинхронность обычно работает быстрее благодаря способности программы выполнять несколько задач без блокировки потока исполнения. В остальных случаях выполнения задачи обычно выполняются последовательно: одна задача начинается только после завершения предыдущей. В таком случае, если одна из задач занимает много времени на ожидание ввода-вывода или другой медленной операции, все последующие задачи также останавливаются.</p>
