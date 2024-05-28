@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>LAB</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">LAB</a>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#3" class="nav-link">Лабораторная работа 3</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">Цель лабораторной работы</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">Описание заданий</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#1" class="nav-link">Задание 1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2-fastapi" class="nav-link">Задание 2. Вызов парсера из FastAPI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#3-fastapi" class="nav-link">Задание 3. Вызов парсера из FastAPI через очередь</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">Вывод</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="3">Лабораторная работа 3</h1>
+<h2 id="_1">Цель лабораторной работы</h2>
+<p>Научиться упаковывать FastAPI приложение в Docker, интегрировать парсер данных с базой данных и вызывать парсер через API и очередь.</p>
+<p>Docker — это платформа для разработки, доставки и запуска приложений в контейнерах. Контейнеры позволяют упаковать приложение и все его зависимости в единый образ, который можно запускать на любой системе, поддерживающей Docker, что обеспечивает консистентность среды выполнения и упрощает развертывание. Docker помогает ускорить разработку, повысить гибкость и масштабируемость приложений.</p>
+<p>Сначала был разработан один контейнер для парсинга и приложения из первой лабораторной работы. Затем был добавлен отдельный контейнер для парсинга.</p>
+<h2 id="_2">Описание заданий</h2>
+<h2 id="1">Задание 1</h2>
+<ol>
+<li>
+<p>Создание FastAPI приложения: Создано в рамках лабораторной работы номер 1</p>
+</li>
+<li>
+<p>Создание базы данных: Создано в рамках лабораторной работы номер 1</p>
+</li>
+<li>
+<p>Создание парсера данных: Создано в рамках лабораторной работы номер 2</p>
+</li>
+<li>
+<p>Реализуйте возможность вызова парсера по http. Для этого можно сделать отдельное приложение FastAPI для парсера или воспользоваться библиотекой socket или подобными.</p>
+</li>
+<li>
+<p>Разработка Dockerfile: Необходимо создать Dockerfile для упаковки FastAPI приложения и приложения с парсером. В Dockerfile указать базовый образ, установить необходимые зависимости, скопировать исходные файлы в контейнер и определить команду для запуска приложения. Зачем: Docker позволяет упаковать приложение и все его зависимости в единый контейнер, что обеспечивает консистентность среды выполнения и упрощает развертывание.</p>
+</li>
+<li>
+<p>Создание Docker Compose файла: Необходимо написать docker-compose.yml для управления оркестром сервисов, включающих FastAPI приложение, базу данных и парсер данных. Определите сервисы, укажите порты и зависимости между сервисами. Зачем: Docker Compose упрощает управление несколькими контейнерами, позволяя вам запускать и настраивать все сервисы вашего приложения с помощью одного файла конфигурации.</p>
+</li>
+</ol>
+<h2 id="2-fastapi">Задание 2. Вызов парсера из FastAPI</h2>
+<p>Эндпоинт в FastAPI для вызова парсера: Необходимо добавить в FastAPI приложение ендпоинт, который будет принимать запросы с URL для парсинга от клиента, отправлять запрос парсеру (запущенному в отдельном контейнере) и возвращать ответ с результатом клиенту. </p>
+<p>Это позволит интегрировать функциональность парсера в ваше веб-приложение, предоставляя возможность пользователям запускать парсинг через API.</p>
+<h2 id="3-fastapi">Задание 3. Вызов парсера из FastAPI через очередь</h2>
+<p>Как это работает: Celery — это асинхронная очередь задач, которая позволяет легко распределять и выполнять задачи в фоне. </p>
+<p>Redis используется как брокер сообщений, хранящий задачи, которые должны быть выполнены. При получении HTTP-запроса, задача ставится в очередь Redis, и Celery-воркер обрабатывает её в фоне. Docker Compose позволяет легко настроить и запустить Celery, Redis и ваше FastAPI приложение как отдельные контейнеры, работающие в одной сети. Это упрощает управление зависимостями и конфигурацией всех компонентов системы. </p>
+<ul>
+<li>
+<p>Установить Celery и Redis: Необходимо добавить зависимости для Celery и Redis в проект. Celery будет использоваться для обработки задач в фоне, а Redis будет выступать в роли брокера задач и хранилища результатов. Зачем: Celery и Redis позволяют организовать фоновую обработку задач, что полезно для выполнения длительных или ресурсоемких операций без блокировки основного потока выполнения.</p>
+</li>
+<li>
+<p>Настроить Celery: Необходимо создать файл конфигурации для Celery. Определить задачу для парсинга URL, которая будет выполняться в фоновом режиме. Зачем: Настройка Celery позволит асинхронно обрабатывать задачи, что улучшит производительность и отзывчивость вашего приложения.</p>
+</li>
+<li>
+<p>Обновить Docker Compose файл: Необходимо добавить сервисы для Redis и Celery worker в docker-compose.yml. Определите зависимости между сервисами, чтобы обеспечить корректную работу оркестра. Зачем: Это позволит вам легко управлять всеми сервисами вашего приложения, включая асинхронную обработку задач, с помощью одного файла конфигурации.</p>
+</li>
+<li>
+<p>Эндпоинт для асинхронного вызова парсера: Необходимо добавить в FastAPI приложение маршрут для асинхронного вызова парсера. Маршрут должен принимать запросы с URL для парсинга, ставить задачу в очередь с помощью Celery и возвращать ответ о начале выполнения задачи. Зачем: Это позволит запускать парсинг веб-страниц в фоне, что улучшит производительность и пользовательский опыт вашего приложения.</p>
+</li>
+</ul>
+<h3 id="dockerfile">Dockerfile</h3>
+<pre><code>FROM python:3.10-slim-buster as builder
+
+RUN apt-get update
+
+RUN pip install poetry
+COPY poetry.lock pyproject.toml /
+RUN poetry config virtualenvs.create false \
+    &amp;&amp; poetry install --no-interaction --no-dev\
+    &amp;&amp; rm -rf pyproject.toml poetry.lock
+
+WORKDIR /qr_test
+COPY . /qr_test
+
+CMD uvicorn src.main:app --host 0.0.0.0 --port 8001
+</code></pre>
+<h3 id="docker-omposeyaml-parser">Docker-сompose.yaml - с учетом добавления контейнера parser</h3>
+<pre><code>version: "3.10"
+services:
+  app:
+    build:
+      context: .
+    env_file: .env
+    depends_on:
+      - db
+    ports:
+      - "8001:8001"
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8001
+    networks:
+      - backend
+    restart: always
+
+  db:
+    image: postgres
+    restart: always
+    #env_file: .env
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=hfm
+      - POSTGRES_PORT=5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+    networks:
+      - backend
+
+  celery:
+    restart: always
+    build: .
+    command: celery -A src.celery worker -B -l INFO
+    volumes:
+      - .:/usr/src/lab
+    env_file: .env
+    depends_on:
+      - db
+      - redis
+      - parser
+    networks:
+      - backend
+  parser:
+    restart: always
+    build: .
+    command: uvicorn src.main2:app --host 0.0.0.0 --port 80
+    volumes:
+      - .:/usr/src/lab
+    env_file: .env
+    depends_on:
+      - db
+    ports:
+      - "8002:80"
+    networks:
+      - backend
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - backend
+
+
+volumes:
+  postgres_data:
+
+networks:
+  backend:
+     driver: bridge
+</code></pre>
+<h3 id="pyprojecttoml">pyproject.toml</h3>
+<pre><code>[tool.poetry]
+name = "lab"
+version = "0.1.0"
+description = ""
+authors = ["Maria Antonova &lt;mariaantonova261@gmail.com&gt;"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+sqlmodel = "^0.0.18"
+SQLAlchemy = "^2.0.30"
+pydantic = "^2.7.1"
+fastapi = "^0.111.0"
+uvicorn = "^0.29.0"
+aiohttp = "^3.9.5"
+alembic = "^1.13.1"
+celery = "^5.4.0"
+redis = "^5.0.4"
+psycopg2-binary = "^2.9.9"
+passlib = "^1.7.4"
+PyJWT = "^2.8.0"
+bs4 = "^0.0.2"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core&gt;=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+</code></pre>
+<h3 id="parse2py">parse2.py</h3>
+<pre><code>parse_router = APIRouter(prefix="", tags=["parser"])
+
+
+@parse_router.post("/parse")
+async def parse(url: str, session=Depends(get_session)):
+    sqlalchemy_worker = SqlalchemyWorker(session)
+    try:
+        async with aiohttp.ClientSession() as request_session:
+            response = await request_session.get(url)  #парсер запрашивает html
+            response.raise_for_status()
+            html = await response.text()
+            parse_and_save(url, html, sqlalchemy_worker)
+            #parse_url_content.delay(url, html, sqlalchemy_worker) # вызов задачи
+            return {"message": "Parsing is started"}
+    except aiohttp.client.ClientConnectorError as e:
+        raise fastapi.HTTPException(status_code=500, detail=str(e))
+</code></pre>
+<h3 id="parsepy">parse.py</h3>
+<pre><code>from fastapi import APIRouter
+from fastapi import Depends
+
+from src.settings.connection import get_session
+from src.tasks.parser_url_content import parse_url_content
+    parse_router = APIRouter(prefix="", tags=["parser"])
+
+@parse_router.post("/parse")
+async def parse(url: str, session=Depends(get_session)):
+    #sqlalchemy_worker = SqlalchemyWorker(session)
+    parse_url_content.delay(url)  # вызов задачи для celery
+    return {"message": "Parsing is started"}
+</code></pre>
+<h3 id="celerypy">celery.py</h3>
+<pre><code>import os
+
+import requests
+from celery import Celery
+from src.adapters.db import SqlalchemyWorker
+from src.repos.parser import parse_and_save
+
+celery_app = Celery(__name__)
+celery_app.conf.broker_url = os.environ.get("CELERY_BROKER_URL", "redis://redis:6379")
+celery_app.conf.result_backend = os.environ.get("CELERY_RESULT_BACKEND", "redis://redis:6379")
+
+
+import aiohttp
+
+from src.adapters.db import SqlalchemyWorker
+from src.celery import celery_app
+from src.repos.parser import parse_and_save
+
+
+@celery_app.task(name="parse_url_content") # задача celery - она выполняется синхронно
+def parse_url_content(url: str): #метод
+    #parse_and_save(url, html, sqlalchemy_worker)
+    with requests.Session() as request_session:
+        full_url = f'http://parser/parse?url={url}'
+        response = request_session.post(full_url)
+        response.raise_for_status()
+        #html = await response.text()
+        #parse_url_content.delay(url, html, sqlalchemy_worker) # вызов задачи
+        return {"message": "Parsing is started"}
+</code></pre>
+<h2 id="_3">Вывод</h2>
+<p>В рамках данной лабораторной работы были получены навыки по настройки и использования асинхронной очереди задач в реальном приложении</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.5.3
+Build Date UTC : 2024-05-28 18:59:58.902542+00:00
+-->
