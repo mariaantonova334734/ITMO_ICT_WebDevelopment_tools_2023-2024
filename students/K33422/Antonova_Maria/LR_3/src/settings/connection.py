@@ -7,8 +7,7 @@ engine = create_engine(config.db_uri, echo=True)
 
 
 def init_db():
-    SQLModel.metadata.create_all(engine)
-    # Project.metadata.create_all(engine)
+    Project.metadata.create_all(engine)
 
 
 def get_session():
